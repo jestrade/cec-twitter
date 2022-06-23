@@ -1,22 +1,33 @@
-import { useState } from "react";
-import Header from "./../header/Header";
-import Content from "./../content/Content";
-import Footer from "./../footer/Footer";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
 import style from "./style.css"
 
-const Main = () => {
-    const [name, setName] = useState("jesus");
-    const [username, setUserName] = useState("jestrade");
+import Home from "./../private/home/Home";
+import Index from "./../public/index/Index";
+import Login from "./../public/login/Login";
+import SignUp from "./../public/signup/SignUp";
+import PasswordRecovery from "./../public/passwordRecovery/PasswordRecovery";
+import { useState } from "react";
 
-    const logOut = () => {
-        setName("");
-        setUserName("");
-    }
+const Main = () => {
+    const [isAuth, setIsAuth] = useState(false);
 
     return <>
-        {name !== "" && username !== "" && <Header username={username} name={name} logOut={logOut} />}
-        <Content />
-        <Footer />
+        <Router>
+            <Routes>
+                {
+                    isAuth ?
+                        <Route path="/" element={<Home />} />
+                        :
+                        <>
+                            <Route path="/" element={<Index />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/signup" element={<SignUp />} />
+                            <Route path="/passwordRecovery" element={<PasswordRecovery />} />
+                        </>
+                }
+            </Routes>
+        </Router>
     </>
 };
 
