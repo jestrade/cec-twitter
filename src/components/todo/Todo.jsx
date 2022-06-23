@@ -10,25 +10,39 @@ const List = ({ items }) => {
 
 }
 
-const Form = () => {
+const Form = ({ addItem }) => {
     const [input, setInput] = useState("");
     const handleChange = (event) => {
         setInput(event.target.value);
     }
+    const handleClick = () => {
+        addItem(input);
+        setInput("");
+    }
 
     return <p>
         <input type="text" onChange={handleChange} value={input} placeholder="add item" />
-        <button type="button">Add item</button>
+        <button type="button" onClick={handleClick}>Add item</button>
     </p>;
 }
 
 const Todo = () => {
     const [items, setItems] = useState([]);
 
+    const addItem = (item) => {
+        const newArray = [...items];
+        newArray.push({
+            id: Math.floor(Math.random() * 1000),
+            content: item,
+            completed: false
+        });
+        setItems(newArray);
+    }
+
     return <section>
         <h1>To do</h1>
         <form>
-            <Form />
+            <Form addItem={addItem} />
             <List items={items} />
         </form>
     </section>
