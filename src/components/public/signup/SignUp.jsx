@@ -19,10 +19,11 @@ const SignUp = () => {
                     username: username,
                     name: name,
                     email: email,
-                    password: password
+                    password: password,
+                    passwordConfirmation: passwordConfirmation
                 };
                 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-                const url = "https://twitter-api-fed-2021.herokuapp.com/api/users";
+                const url = "https://api-twitter-cec-2022.herokuapp.com/api/users";
                 fetch(url, {
                     method: "POST",
                     body: JSON.stringify(user),
@@ -35,6 +36,8 @@ const SignUp = () => {
                     )
                     .then(json => {
                         setMessage("user created");
+
+                        //clean fields
                     })
                     .catch(error => {
                         setMessage("error while creating the user");
