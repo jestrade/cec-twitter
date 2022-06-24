@@ -16,11 +16,11 @@ const SignUp = () => {
         if (username !== "" && name !== "" && email !== "" && password !== "" && passwordConfirmation !== "") {
             if (password === passwordConfirmation) {
                 const user = {
-                    username: username,
-                    name: name,
-                    email: email,
-                    password: password,
-                    passwordConfirmation: passwordConfirmation
+                    username,
+                    name,
+                    email,
+                    password,
+                    passwordConfirmation
                 };
                 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
                 const url = "https://api-twitter-cec-2022.herokuapp.com/api/users";

@@ -1,10 +1,9 @@
-import style from "./style.css";
-
-const Header = ({ name, username, logOut }) => {
+const Header = (props) => {
+    const { user, logout } = props;
 
     return <header className="header">
-        <p>welcome {username} - {name}</p>
-        <p><button type="button" onClick={logOut}>log out</button></p>
+        <p>welcome {user?.name}</p>
+        <p><button type="button" onClick={logout}>log out</button></p>
     </header>
 };
 

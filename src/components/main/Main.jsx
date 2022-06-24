@@ -28,12 +28,23 @@ const Main = () => {
         window.location = "/";
     };
 
+    const logout = (user) => {
+        setIsAuth(false);
+        setUser({
+            username: "",
+            name: "",
+            token: ""
+        });
+        localStorage.removeItem("user");
+        window.location = "/";
+    };
+
     return <>
         <Router>
             <Routes>
                 {
                     isAuth ?
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Home user={user} logout={logout} />} />
                         :
                         <>
                             <Route path="/" element={<Index />} />

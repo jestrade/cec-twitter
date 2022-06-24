@@ -14,8 +14,8 @@ const Login = (props) => {
         setMessage("");
         if (username !== "" && password !== "") {
             const user = {
-                username: username,
-                password: password,
+                username,
+                password
             };
             // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
             const url = "https://api-twitter-cec-2022.herokuapp.com/api/users/login";
@@ -23,7 +23,7 @@ const Login = (props) => {
                 method: "POST",
                 body: JSON.stringify(user),
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
             })
                 .then(response =>
