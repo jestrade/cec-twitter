@@ -1,0 +1,19 @@
+.home {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.column {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.leftColumn {
+    background: #1DA1F2;
+}
+
+.rightColumn {
+    background: #FFF;
+}
