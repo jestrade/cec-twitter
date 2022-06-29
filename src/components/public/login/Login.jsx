@@ -51,7 +51,7 @@ const Login = (props) => {
                 <p className="paragraphSmall"><label className="label">Username</label><input type="text" className="input" value={username} onChange={(e) => setUsername(e.target.value)} /></p>
                 <p className="paragraphSmall"><label className="label">Password</label><input type="password" className="input" value={password} onChange={(e) => setPassword(e.target.value)} /></p>
                 <p className="paragraphLarge"><Link to="/passwordRecovery">Forgot password?</Link></p>
-                <p className="paragraphLarge"><button type="button" className="button" onClick={handleClik}>Login now</button></p>
+                <p className="paragraphLarge"><button type="button" className="button buttonPrimary" onClick={handleClik}>Login now</button></p>
                 {!!message && <p>{message}</p>}
             </form>
             <p>Dont have an account? <Link to="/signup">Join free today</Link></p>

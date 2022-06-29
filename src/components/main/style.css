@@ -49,18 +49,30 @@ a:hover {
 }
 
 .button {
-    background: #1DA1F2;
     border: none;
     border-radius: 5px;
-    color: #FFF;
+    display: block;
     cursor: pointer;
     font-size: 16px;
     padding-top: 15px;
     padding-bottom: 16px;
+    text-align: center;
     width: 100%;
 }
 
-button:hover {
+.buttonPrimary {
+    background: #1DA1F2;
+    color: #FFF;
+}
+
+.buttonSecondary {
+    background: #FFF;
+    border: 1px solid #1DA1F2;
+    color: #1DA1F2;
+}
+
+.button:hover {
+    text-decoration: none;
     opacity: 90%;
 }
 

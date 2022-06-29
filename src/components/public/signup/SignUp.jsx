@@ -63,7 +63,7 @@ const SignUp = () => {
                 </p>
                 <p className="paragraphLarge"><label className="label">Password Confirmation</label><input type="password"
                     className="input" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} /></p>
-                <p className="paragraphLarge"><button type="button" className="button" onClick={handleClik}>Sign Up</button></p>
+                <p className="paragraphLarge"><button type="button" className="button buttonPrimary" onClick={handleClik}>Sign Up</button></p>
                 {!!message && <p>{message}</p>}
             </form>
             <p>Already have an account? <Link to="/login">Login</Link></p>
