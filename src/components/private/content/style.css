@@ -1,0 +1,10 @@
+.feedContent {
+    border: 1px solid #e0dfdf;
+    padding: 0;
+}
+
+.feedItem {
+    border-bottom: 1px solid #e0dfdf;
+    list-style-type: none;
+    padding: 50px 30px;
+}

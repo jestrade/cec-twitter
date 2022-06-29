@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+import "./../../main/style.css";
+import "./style.css";
+
 const Content = (props) => {
     const { user } = props;
 
@@ -65,8 +68,8 @@ const NewTweet = (props) => {
 
     return <>
         <form>
-            <p><textarea value={content} onChange={(event) => setContent(event.target.value)} /></p>
-            <p><button type="button" onClick={() => newTweet(content)}>send</button></p>
+            <p className="paragraphSmall"><textarea className="input" value={content} onChange={(event) => setContent(event.target.value)} /></p>
+            <p className="paragraphSmall"><button className="button buttonPrimary buttonSmall" type="button" onClick={() => newTweet(content)}>send</button></p>
         </form>
     </>
 };
@@ -77,12 +80,11 @@ const Feed = (props) => {
     return <section>
         {
             tweets?.length > 0 ?
-                <ul>
-                    {tweets.map(tweet => <li key={tweet._id}>
-                        <p><strong>{`${tweet.user.name} @${tweet.user.username}`}</strong></p>
-                        <p>{tweet.content}</p>
-                        <p>comments: {tweet.comments.length}</p>
-                        <p>{tweet.createdAt}</p>
+                <ul className="feedContent">
+                    {tweets.map(tweet => <li className="feedItem" key={tweet._id}>
+                        <p className="paragraphSmall"><strong>{`${tweet.user.name} @${tweet.user.username} ${tweet.createdAt}`}</strong></p>
+                        <p className="paragraphSmall">{tweet.content}</p>
+                        <p className="paragraphSmall">comments: {tweet.comments.length}</p>
                     </li>)}
                 </ul>
                 :

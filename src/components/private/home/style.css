@@ -1,0 +1,6 @@
+.feed {
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+    margin: 0 auto;
+    width: 1280px;
+}

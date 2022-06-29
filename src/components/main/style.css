@@ -54,10 +54,14 @@ a:hover {
     display: block;
     cursor: pointer;
     font-size: 16px;
-    padding-top: 15px;
-    padding-bottom: 16px;
+    padding: 15px 30px 16px 30px;
     text-align: center;
     width: 100%;
+}
+
+.buttonSmall {
+    display: inline;
+    width: auto;
 }
 
 .buttonPrimary {
