@@ -4,14 +4,22 @@
 // 4. fragment <>
 // 5. siempre nombrar componentes con mayúscula inicial
 
-const Title = () => <h1>twitter</h1>;
-const Content = () => <p>welcome!</p>;
-const Footer = () => <footer>all rights reserved</footer>;
+export const Title = (props) => {
+  const { title } = props
+  return !!title && (<h1>{title}</h1>)
+};
+
+const Content = () => <section>
+  <p>Welcome!</p>
+  <form><button type="button">send</button></form>
+</section>;
+
+const Footer = () => <footer data-testid="footer">All rights reserved</footer>;
 
 const App = () => {
   return (
     <>
-      <Title />
+      <Title title="Twitter" />
       <Content />
       <Footer />
     </>
